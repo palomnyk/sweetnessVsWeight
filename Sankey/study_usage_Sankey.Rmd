@@ -1,0 +1,263 @@
+---
+title: "study_usage_Sankey"
+output: html_document
+date: "2023-06-02"
+---
+
+Document for making Sankey Plot.
+
+On the left side of the plot, we need to have the primary sources
+On the right, we need to put how they are used in systematic reviews.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+study_usage <- read.table("study_usage.txt", sep="\t", header = T,
+                          encoding = "latin1")
+head(study_usage)
+```
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+# if (!requireNamespace("ggsankey", quietly = TRUE))  BiocManager::install("ggsankey")
+# library("ggsankey")
+# install.packages("remotes")
+# remotes::install_github("NumbersInternational/flipPlots")
+
+# install.packages("flipplots")
+```
+
+
+
+
+
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+if (!requireNamespace("networkD3", quietly = TRUE))  BiocManager::install("networkD3")
+# Load package
+library(networkD3)
+# Load energy projection data
+URL <- paste0(
+        "https://cdn.rawgit.com/christophergandrud/networkD3/",
+        "master/JSONdata/energy.json")
+Energy <- jsonlite::fromJSON(URL)
+# Plot
+sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             units = "TWh", fontSize = 12, nodeWidth = 30)
+```
+
+#Plan:
+Need to programatically tease out node names c("RCT",Cross-sectional","Cohort", "MA", "T").
+Need to find programatically linkages.
+  Source and target
+Need to make counts (values) for thickness of linkages.
+
+#Psudo-code to find linkages and counts
+links <- dataframe for links with headers as: source, target, count
+For row in study_usage, if study_usage$Study.Design is present:
+  used <- FALSE #flag for determining secondary usage
+  source_node_number <- index in all node names
+  for column in secondary columns:
+    if row in column has name in node_names:
+      used <- TRUE
+      target_node_number <- index in all node names
+      if source_node_number and target_node_number combo in linkds df:
+        links[source == source_node_number & target == target_node_number, counts] += 1
+      else:
+        links[source == source_node_number & target == target_node_number, counts] <- 1
+    if (used == FALSE):
+        links[source == source_node_number & target == "None", counts] += 1
+      else:
+        links[source == source_node_number & target == "None", counts] <- 1
+
+```{r}
+left_node_names <- unique(study_usage$Study.Design)
+right_node_names <- c("T","MA","None")
+all_node_names <- c(left_node_names, right_node_names)
+
+links <- data.frame(source = character(0), target = character(0), count = integer(0))
+for (rw in 1:nrow(study_usage)){
+  primary <- study_usage$Study.Design[rw]#source
+  if (primary %in% left_node_names){
+    used <- FALSE #flag for determining secondary usage
+    source_node_num <- match(primary, all_node_names)
+    # print(primary)
+    for (cl in 10:19){
+      query_cell <- study_usage[rw,cl]
+      if (query_cell %in% right_node_names){
+        used <- TRUE
+        target_node_num <- match(query_cell, all_node_names)
+        #look up if source node and target node already in links
+        current_link_combos <- paste(links$source, links$target)#get current combos
+        if (paste(source_node_num, target_node_num) %in% current_link_combos){
+          node_count <- links[links$source==source_node_num & links$target==target_node_num, "count"]
+          # print(paste("final if:", source_node_num, target_node_num, node_count))
+          links[links$source==source_node_num & links$target==target_node_num, "count"] <- node_count + 1
+        }#if (in link_combos) close
+        else{
+          new_row <- data.frame("source" = source_node_num,"target" = target_node_num,"count" = 1)
+          links <- rbind(links, new_row)
+        }#else close
+      }#if (query_cell %in% right_node_names close
+    }#column for-loop close
+    if (used == FALSE){
+      #if the primary source wasn't used, we increment the "None" count
+      none_index <- match("None", all_node_names)
+      current_link_combos <- paste(links$source, links$target)#get current combos
+      if (paste(source_node_num, none_index) %in% current_link_combos){
+          node_count <- links[links$source==source_node_num & links$target==none_index, "count"]
+          # print(paste("'Used' if:", source_node_num, target_node_num, node_count))
+          links[links$source==source_node_num & links$target==none_index, "count"] <- node_count + 1
+        }#if (in link_combos) close
+        else{
+          new_row <- data.frame("source" = source_node_num,"target" = none_index,"count" = 1)
+          links <- rbind(links, new_row)
+        }#else close
+    }#if (used == FALSE
+  }#if (primary) close
+}#row for loop close
+
+#update node names to clarify in plot
+all_node_names[all_node_names == "MA"] <- "Meta-analysis"
+all_node_names[all_node_names == "T"] <- "Text/tabular summary"
+#make node names into dataframe for Sankey input
+nodes <- data.frame(nodes = all_node_names)
+#Adjust links because JS is 0 indexed
+links$source <- links$source - 1
+links$target <- links$target - 1
+
+print(links)
+```
+
+```{r}
+
+p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
+             Target = "target", Value = "count", NodeID = "nodes",
+             units = "Studies", fontSize = 20, nodeWidth = 30, 
+             margin = list(50,100,500,100), sinksRight = TRUE,
+             height = 500, width = 500)
+
+saveNetwork(p, file="output/Study_Usage_Sankey.html", selfcontained = TRUE)
+p
+
+```
+
+
+I want to customize this more than NetworkD3 allows, so now add column names:
+Getting the code from here:
+https://stackoverflow.com/questions/66813278/how-to-add-columnn-titles-in-a-sankey-chart-networkd3
+
+
+```{r}
+
+htmlwidgets::onRender(p, '
+  function(el) { 
+    var cols_x = this.sankey.nodes().map(d => d.x).filter((v, i, a) => a.indexOf(v) === i).sort(function(a, b){return a - b});
+    var labels = ["Primary Studies", "Secondary Studies"];
+    cols_x.forEach((d, i) => {
+      d3.select(el).select("svg")
+        .append("text")
+        .attr("x", d)
+        .attr("y", 12)
+        .text(labels[i]);
+    })
+  }
+')
+
+htmlwidgets::saveWidget(
+  p,
+  "output/updated_Sankey.html",
+  selfcontained = TRUE,
+)
+
+```
+
+I also want to add a label:
+https://www.geeksforgeeks.org/how-to-add-axis-labels-using-networkd3-in-r/
+
+```{r}
+
+
+p <- htmlwidgets::prependContent(p,
+                                 htmltools::tags$h1(
+                                 "Sweetness Primary Study Usage",
+                                 style="text-align:center;color:#000000; "),
+                                      htmltools::tags$h2(
+                                        "Sankey plot",
+                                      style="color:#000000;text-align:center;"))
+ 
+# view graph
+htmlwidgets::saveWidget(
+  p,
+  "output/updated_Sankey.html",
+  selfcontained = TRUE
+)
+p
+
+```
+
+
+
+```{r}
+
+# create left-right label
+leftTx = htmltools::tags$div(
+         style="max-width: 30vw; height: 100%;
+                 display: flex; align-items: center;
+                 justify-content: center;",
+         tags$p(""))
+ 
+rightTx = htmltools::tags$p("",
+                   style="max-width:30vw")
+ 
+# final output with label. combineWidget
+# can be use by manipulateWidget.
+p <- combineWidgets(p,
+                    title = tags$h1("With left-right label",
+                    style="text-align:center;color:#007500;"),
+                    leftCol = leftTx,
+                    rightCol = rightTx,
+                    nrow = 1)
+ 
+# view graph
+p
+
+```
+
+
+
+
+# create left-right label
+leftTx = tags$div(
+         style="max-width: 30vw; height: 100%;
+                 display: flex; align-items: center;
+                 justify-content: center;",
+         tags$p("This is left side label"))
+ 
+rightTx = tags$p("This is right side label",
+                   style="max-width:30vw")
+ 
+# final output with label. combineWidget
+# can be use by manipulateWidget.
+graph3 <- combineWidgets(graph2,
+                      title = tags$h1("With left-right label",
+                      style="text-align:center;color:#007500;"),
+                      leftCol = leftTx,
+                      rightCol = rightTx,
+                      nrow = 1)
+ 
+# view graph
+graph3
+
+https://stackoverflow.com/questions/35056733/how-to-capture-html-output-as-png-in-r
+
+
+
+
