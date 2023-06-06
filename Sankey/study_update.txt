@@ -1,0 +1,129 @@
+Reference Short	Study Design	"McGlynn, 2022"	"Lee, 2022"	"Rousham, 2022"	"WHO, 2022"	"Rogers, 2021"	"Laviada-Molina, 2020"	"Lohner, 2020"	"Qin, 2020"	"Anker, 2019"	"Toews, 2019"	"Karalexi, 2018"	"Santos, 2018"	"Azad, 2017"	"Ruanpeng, 2017"	"Reid, 2016"	"Rogers, 2016"	"Miller, 2014"	"Pereira, 2014"	"Wiebe, 2011"	"Brown, 2010"
+"Sagrario Lopez-Meza, 2021"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Sánchez-Delgado, 2021"	RCT	0	0	0	"MA-BW, BMI"	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Viveros-Watty, 2021"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Bueno-Hernández, 2020"	RCT	0	0	0	MA-BMI	MA-BMI LCS v water/nothing	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Ebbeling, 2020"	RCT	"MA-BW, BF%"	0	0	"MA-BW, BMI"	MA-BW LCS v Sugar; MA-BW LCS v water/nothing	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Hieronimus, 2020"	RCT	0	0	0	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Kim, 2020"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Stamataki, 2020"	RCT	0	0	0	"MA-BW, BMI"	MA-BW LCS v water/nothing	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Higgins, 2019"	RCT	"MA-BW, BMI, BF%"	0	0	"MA-BW, BMI"	MA- BW LCS v Sugar	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Thomson, 2019"	RCT	0	0	0	0	MA-BW/BMI LCS capsules v placebo	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Bonnet, 2018"	RCT	"MA-BW, WC"	0	0	MA-BW	MA-BW LCS v nothing	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Engel, 2018"	RCT	"MA-BW, BMI, BF%"	0	0	"MA-BW, BMI"	MA- BW LCS v Sugar	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Fantino, 2018"	RCT	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Han, 2018"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Higgins, 2018"	RCT	"MA-BW, BF%"	0	0	MA-BW	MA-BW LCS vs water/nothing; MA-BW/BMI LCS capsules v placebo	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Lertrit, 2018"	RCT	0	0	0	MA-BW	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Madjd, 2018"	RCT	0	0	0	"MA-BW, BMI"	MA-BW LCS v water/nothing	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Rizwan, 2018"	RCT	0	0	0	0	MA-BW/BMI LCS capsules v placebo	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Romo-Romo, 2018"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Al-Dujali, 2017"	RCT	0	0	0	"MA-BW, BMI"	MA-BW LCS v sugar	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Kassi, 2016"	RCT	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Madjd, 2016"	RCT	"MA-BW, BMI, WC"	0	0	0	MA-BW LCS v water/nothing	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Markey, 2016"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"McLay-Cooke, 2016"	RCT	0	0	0	"MA-BW, BMI"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Vasquez-Duran, 2016"	RCT	0	0	0	MA-BMI	MA-BW LCS v Sugar; MA-BW LCS v water/nothing	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Angelopoulos, 2015/2016"	RCT	0	0	0	Text only	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Campos, 2015"	RCT	"MA-BW, BMI, BF%"	0	0	"MA-BW, BMI"	MA- BW LCS v Sugar	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Ensor, 2015"	RCT	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Kuzma, 2015"	RCT	0	0	0	MA-BW	Text only	0	0	0	0	MA-BW	0	Text only	0	0	0	0	0	0	0	0
+"Madjd, 2015a"	RCT	"MA-BW, BMI, WC"	0	0	0	0	0	0	0	0	0	0	0	MA-BMI MD; MA-BW SMD	0	0	0	0	0	0	0
+"Stanhope, 2015"	RCT	0	0	0	0	MA- BW LCS v Sugar	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Hernandez-Cordero, 2014"	RCT	"MA-BW, BMI, BF%, WC"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Koyuncu, 2014"	RCT	0	0	0	0	MA-BW LCS v nothing	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Peters, 2014/2016"	RCT	"MA-BW, WC"	0	0	MA-BW	MA-BW LCS v water/nothing	MA-BW	0	0	0	0	0	0	MA-BW SMD	0	0	MA-BW LCS v water	0	0	0	0
+"Reid, 2014"	RCT	"MA-BW, BMI"	0	0	MA-BW	MA- BW LCS v Sugar	MA-BW	0	0	0	MA-BW	0	0	0	0	0	0	0	0	0	0
+"Taljaard, 2013 (2012 in WHO, 2022)"	RCT	0	0	0	MA-BMI z-score	MA- BW LCS v Sugar	0	0	0	0	MA-BMI z-score	0	0	0	0	Text only	0	0	0	0	0
+"deRuyter, 2012"	RCT	0	0	0	MA-BMI z-score	MA- BW LCS v Sugar	MA-BW	0	0	0	MA-BMI z-score	0	0	0	0	Text only	MA-BW LCSB v SSB	MA-BW	Text only	0	0
+"Ebbeling, 2012"	RCT	0	0	0	0	0	MA-BW	0	0	0	0	0	0	0	0	0	0	MA-BW; MA-BMI; MA-Fat mass	0	0	0
+"Maersk, 2012"	RCT	0	0	0	0	0	MA-BW	0	0	0	MA-BW	0	MA-BW ASP v control; MA-BW ASP v sucrose	MA-BW SMD	0	0	MA-BW LCS v water	MA-BW	Text only	0	0
+"Tate, 2012"	RCT	"MA-BW, WC"	0	0	MA-BW	MA-BW LCS v Sugar; MA-BW LCS v water/nothing	MA-BW	0	0	0	0	0	0	MA-BW SMD	0	0	MA-BW LCS v water	MA-BW	Text only	0	0
+"Ballantyne, 2011"	RCT	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"Kim, 2011"	RCT	0	0	0	MA-BW	Text only	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"Njike, 2011"	RCT	0	0	0	"MA-BW, BMI"	MA-BW LCS v sugar	0	0	0	0	0	0	0	0	0	0	MA-BW LCSB v SSB	MA-BW; MA-BMI; MA-WC	0	0	0
+"Reid, 2010"	RCT	"MA-BW, BMI"	0	0	MA-BW	MA- BW LCS v Sugar	MA-BW	0	0	0	0	0	0	0	0	0	MA-BW LCSB v SSB	MA-BW	0	0	0
+"Barriocanal, 2008"	RCT	0	0	0	0	MA-BMI LCS capsules v placebo	0	MA-BMI LCS v placebo	0	MA-BMI	0	0	0	0	0	0	0	0	0	0	0
+"Maki, 2008b"	RCT	0	0	0	0	MA-BW/BMI LCS capsules v placebo	0	MA-BW LCS v placebo	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Maki, 2008a"	RCT	0	0	0	0	Text only	MA-BW	0	0	0	MA-BW	0	0	0	0	0	0	0	0	0	0
+"Reid, 2007"	RCT	"MA-BW, BMI"	0	0	"MA-BW, BMI"	MA- BW LCS v Sugar	MA-BW	0	0	0	MA-BMI	0	Text only	0	0	0	MA-BW LCSB v SSB	MA-BMI	0	Text only	0
+"Williams, 2007"	RCT	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	Text only
+"da Silva, 2006"	RCT	0	0	0	0	MA-BMI LCS capsules v placebo	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	0	0	0
+"Ebbeling, 2006"	RCT	0	0	0	0	0	MA-BW	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	0	Text only
+"Ferri, 2006"	RCT	0	0	0	0	MA-BMI LCS capsules v placebo	0	0	0	MA-BMI	0	0	0	MA-BMI MD	0	0	0	0	0	0	0
+"Gostner, 2005"	RCT	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	MA-BW	0	0	0
+"Hsieh, 2003"	RCT	0	0	0	0	MA-BMI LCS capsules v placebo	0	0	0	MA-BMI	0	0	0	MA-BMI MD	0	0	0	0	0	0	0
+"Raben, 2001/2002"	RCT	0	0	0	"MA-BW, BMI"	MA- BW LCS v Sugar	MA-BW	0	0	0	"MA-BW, BMI"	0	0	0	0	0	MA-BW LCSB v SSB	MA-BW	Text only	Text only	0
+"Baird, 2000"	RCT	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"Chan, 2000"	RCT	0	0	0	0	MA-BMI LCS capsules v placebo	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	0	0	0
+"McLean, 2000"	RCT	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Reid, 1998"	RCT	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Blackburn, 1997"	RCT	0	0	0	"MA-BW, BMI"	MA- BW LCS v Sugar	MA-BW	0	0	0	Text only	0	MA-BW ASP v control	MA-BW SMD	0	0	MA-BW LCSB v SSB	MA-BW	0	0	0
+"Gatenby, 1997"	RCT	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	MA-BW	0	0	0
+"Naismith, 1995"	RCT	0	0	0	MA-BW	MA-BW LCS v sugar	0	0	0	0	Text Only	0	0	0	0	0	Text only (too short <4 wk)	0	0	0	0
+"Tordoff, 1990"	RCT	MA-BW	0	0	MA-BW	MA-BW LCS v nothing	0	0	0	0	0	0	0	0	0	0	Text only (too short <4 wk)	MA-BW	Text only	0	0
+"Colaguiri, 1989"	RCT	0	0	0	0	MA-BW LCS v sugar	0	MA-BW LCS v sugar	0	0	0	0	MA-BW ASP v control; MA-BW ASP v sucrose	0	0	0	0	0	0	0	0
+"Leon, 1989"	RCT	0	0	0	0	MA-BW/BMI LCS capsules v placebo	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0
+"Addington, 1988"	RCT	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Cooper, 1988"	RCT	0	0	0	0	0	0	MA-BW LCS v sugar	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Kanders, 1988"	RCT	0	0	0	"MA-BW, BMI"	MA-BW LCS v water/nothing	MA-BW	0	0	0	Text only	0	Text only	0	0	0	MA-BW LCSB v SSB	MA-BW; MA-BMI; MA-Fat mass	0	0	0
+"Chantelau, 1985"	RCT	0	0	0	0	MA-BW LCS v sugar	0	MA-BW LCS v sugar	0	0	0	0	0	0	0	0	0	0	0	Text only	0
+"Werner, 1984"	RCT	0	0	0	0	MA-BW LCS v sugar	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Porikos, 1982"	RCT	0	0	0	0	0	0	0	0	0	Text Only	0	0	0	0	0	0	0	0	0	0
+"Frey, 1976"	RCT	0	0	0	0	MA- BW LCS v Sugar	MA-BW	0	0	0	Text Only	0	0	0	0	0	0	0	0	0	0
+"Knopp, 1976"	RCT	0	0	0	0	MA-BW/BMI LCS capsules v placebo	MA-BW	0	0	0	Text Only	0	0	0	0	0	0	MA-BW	0	0	Text only
+"Stern, 1976"	RCT	0	0	0	0	MA-BW/BMI LCS capsules v placebo	0	MA-BW LCS v placebo	0	0	0	0	Text only	0	0	0	0	0	0	0	0
+"Berryman, 1968"	RCT	0	0	0	0	MA- BW LCS v Sugar	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Wulaningsih, 2017"	Cross-sectional	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"Kuk, 2016"	Cross-sectional	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"O'Connor, 2015"	Cross-sectional	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	Text only
+"Duran Aguero, 2014"	Cross-sectional	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"Fernandes, 2013"	Cross-sectional	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"French, 2013"	Cross-sectional	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"O'Connor, 2006"	Cross-sectional	0	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0
+"Forshee, 2003"	Cross-sectional	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	Text only
+"Giammattei, 2003"	Cross-sectional	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	Text only
+"Serra-Majem, 1996"	Cross-sectional	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0
+"Stookey, 2008"	Cohort	0	"MA-WC*; MA-BW, WC, BF%* LCSB v SSB only"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Stellman, 1986"	Cohort	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Chia, 2016"	Cohort	0	0	0	"MA-BMI, Ob Incidence, WC, AbO incidence"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Duffey, 2012"	Cohort	0	0	0	MA-Ab incidence (h v l)	0	0	0	MA- OB risk (h v l)	0	0	0	0	0	0	0	Text only	0	0	0	0
+"Hinkle, 2019"	Cohort	0	0	0	0	0	0	0	"MA- OB risk (h v l), OB risk (dose response)"	0	0	0	0	0	0	0	0	0	0	0	0
+"Lana, 2015"	Cohort	0	0	0	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0
+"Ma, 2016"	Cohort	0	0	0	MA-BW (h v l)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Garduno-Alanis, 2020"	Cohort	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Pan, 2013"	Cohort	0	MA-BW LCSB v SSB only	0	0	0	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	0	0	0
+"Mozaffarian, 2011"	Cohort	0	Text - only (double count)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	Text only	0	0
+"Smith, 2015"	Cohort	0	MA-BW	0	MA-BW	0	0	0	0	0	0	0	0	MA-BW	0	0	0	0	0	0	0
+"Gearon, 2014"	Cohort	0	0	0	Text only	0	0	0	0	0	0	0	0	MA-BMI MD	0	0	0	0	0	0	0
+"Nettleton, 2009"	Cohort	0	0	0	MA-Ab incidence (h v l)	0	0	0	"MA- OB risk (h v l), OB risk (dose response)"	0	0	0	0	Text only	Text only	0	Text only	Text only	Text only	0	0
+"Stern, 2017"	Cohort	0	MA-BW	0	"MA-BW (h v l),WC"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Colditz, 1990"	Cohort	0	0	0	0	0	0	0	0	0	Text Only	0	0	0	0	0	0	Text only	0	0	0
+"Schulze, 2004"	Cohort	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	MA-BW	0	0	0
+"Tucker, 2015"	Cohort	0	0	0	MA-BW (h v l)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Ferreira-Pego, 2016"	Cohort	0	0	0	MA-Ab incidence (h v l)	0	0	0	"MA- OB risk (h v l), OB risk (dose response)"	0	0	0	0	0	0	0	0	0	0	0	0
+"Parker, 1997"	Cohort	0	0	0	"MA-BW (cont), BW (h v l)"	0	0	0	0	0	Text Only	0	0	MA-BW	0	0	0	MA-BW	0	0	0
+"Chen, 2009"	Cohort	0	MA-BW	0	0	0	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	Text only	0	0
+"Fowler, 2008/2015"	Cohort	0	0	0	"MA-BMI, OB incidence, WC"	0	0	0	"MA- OB risk (h v l), OB risk (dose response)"	0	0	0	0	Text only	Text only	0	MA-BMI	MA-BMI	Text only	0	0
+"Fresan, 2016"	Cohort	0	"MA-BW, OB incidence LCSB v SSB only; MA-BW, OB incidence LCSB v water only*"	0	0	0	0	0	MA-OB risk (dose response)	0	0	0	0	0	0	0	0	0	0	0	0
+"Bes-Rastrollo, 2006"	Cohort	0	0	0	Text only	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0
+"Acero, 2020"	Cohort	0	0	0	"MA-BMI, BW (h v l)"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Zheng, 2015a"	Cohort	0	0	Text only	"MA-BMI z-score, BF%"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Johnson, 2007"	Cohort	0	0	Text only	0	0	0	0	0	0	0	MA-Fat mass	0	0	0	Text only	0	Text only	0	0	Text only
+"Vanselow, 2009"	Cohort	0	0	0	MA-BMI (h v l)	0	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	Text only	0	0
+"Haines, 2007 (2012 in WHO, 2022)"	Cohort	0	0	0	MA-OW incidence	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0
+"Hasnain, 2014"	Cohort	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	Text only	0	0	0	0	0
+"Macintyre, 2018"	Cohort	0	0	Text only	MA-BMI (h v l)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Berkey, 2004"	Cohort	0	0	0	MA-BMI (continuous)	0	0	0	0	0	0	MA-BMI	0	0	0	MA-BMI	MA-BMI	MA-BMI	Text only	0	Text only
+"Field, 2014"	Cohort	0	0	0	MA-BMI (continuous)	0	0	0	0	0	0	0	0	MA-BMI MD	0	0	0	0	0	0	0
+"Zheng, 2015b"	Cohort	0	0	0	"MA-BW (cont), BMI z-score"	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Laska, 2012"	Cohort	0	0	0	"MA-BMI, BF%"	0	0	0	0	0	0	MA-BMI	0	0	0	0	MA-BMI	MA-BMI	0	0	0
+"Striegel-Moore, 2006"	Cohort	0	0	Text only	MA-BMI (continuous)	0	0	0	0	0	0	MA-BMI	0	0	0	0	MA-BMI	0	Text only	0	Text only
+"Newby, 2004"	Cohort	0	0	Text only	"MA-BW, BMI"	0	0	0	0	0	0	MA-BMI	0	0	0	MA-BMI	0	"MA-BW, BMI"	0	0	0
+"Kral, 2008"	Cohort	0	0	0	Text only	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	Text only
+"Blum, 2005"	Cohort		0	Text only	MA-BMI z-score (cont)	0	0	0	0	0	0	MA-BMI	0	0	0	Text only	0	0	Text only	0	Text only
+"Ludwig, 2001"	Cohort	0	0	0	MA-OW incidence	0	0	0	0	0	0	MA-BMI	0	0	0	Text only	Text only	0	Text only	0	Text only
+"Zheng, 2019"	Cohort	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Davis, 2018"	Cohort	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+"Laverty, 2015"	Cohort	0	0	0	0	0	0	0	0	0	0	MA-BMI	0	0	0	0	0	0	0	0	0
+NA	NA	RCT only	Cohort only	Cohort only	RCT and Cohort	RCT only	RCT only	RCT only	Cohort only	RCT only	RCT and Cohort	Cohort only	RCT only	RCT and Cohort	RCT only	RCT and Cohort	RCT and Cohort	RCT and Cohort	RCT and Cohort	RCT only	RCT and Cohort
