@@ -17,24 +17,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R Markdown
 
 ```{r}
-study_usage <- read.table("study_usage.txt", sep="\t", header = T,
+study_usage <- read.table("study_update.txt", sep="\t", header = T,
                           encoding = "latin1")
 head(study_usage)
 ```
 
 ```{r}
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-# if (!requireNamespace("ggsankey", quietly = TRUE))  BiocManager::install("ggsankey")
+# if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+# if (!requireNamespace("ggsankey", quietly = TRUE))  install.packages("ggsankey")
 # library("ggsankey")
-# install.packages("remotes")
-# remotes::install_github("NumbersInternational/flipPlots")
-
-# install.packages("flipplots")
 ```
-
-
-
-
 
 
 ```{r}
@@ -144,120 +136,134 @@ p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
              margin = list(50,100,500,100), sinksRight = TRUE,
              height = 500, width = 500)
 
-saveNetwork(p, file="output/Study_Usage_Sankey.html", selfcontained = TRUE)
+saveNetwork(p, file="output/Study_Usage_Sankey_small.html", selfcontained = TRUE)
 p
 
 ```
 
-
-I want to customize this more than NetworkD3 allows, so now add column names:
-Getting the code from here:
-https://stackoverflow.com/questions/66813278/how-to-add-columnn-titles-in-a-sankey-chart-networkd3
-
+To improve the figure, Dr. Higgins has provided an updated and redesigned input and updated the request for the figure.
 
 ```{r}
+study_usage <- read.table("study_update.txt", sep="\t", header = T,
+                          encoding = "latin1")
+head(study_usage)
+```
 
-htmlwidgets::onRender(p, '
-  function(el) { 
-    var cols_x = this.sankey.nodes().map(d => d.x).filter((v, i, a) => a.indexOf(v) === i).sort(function(a, b){return a - b});
-    var labels = ["Primary Studies", "Secondary Studies"];
-    cols_x.forEach((d, i) => {
-      d3.select(el).select("svg")
-        .append("text")
-        .attr("x", d)
-        .attr("y", 12)
-        .text(labels[i]);
-    })
-  }
-')
+```{r}
+rows_use <- nrow(study_usage)-1#because the last line is different data
+left_node_names <- unique(study_usage$Reference.Short[1:rows_use])
+right_node_names <- c(colnames(study_usage)[3:ncol(study_usage)])
+all_node_names <- c(left_node_names, right_node_names)
+left_node_groups <- study_usage[nrow(study_usage),3:ncol(study_usage)]
+length(all_node_names)
+```
 
-htmlwidgets::saveWidget(
-  p,
-  "output/updated_Sankey.html",
-  selfcontained = TRUE,
+#Updated code to include node groupings
+```{r}
+links <- data.frame(source = character(0), target = character(0), count = integer(0))
+node_groups <- c()
+# node_groups[length(all_node_names)] <- "None"
+for (rw in 1:rows_use){
+  primary <- study_usage$Reference.Short[rw]#source
+  source_node_num <- match(primary, all_node_names)
+  node_groups[source_node_num] <- study_usage$Study.Design[rw]
+  target_group <- "None"
+  print(paste(rw, primary, study_usage$Study.Design[rw]))
+  for (cl in 3:ncol(study_usage)){
+    query_cell <- study_usage[rw,cl]
+    if (query_cell != "0"){
+      target_node_num <- match(colnames(study_usage)[cl], all_node_names)#match returns index
+      node_groups[target_node_num] <- study_usage[nrow(study_usage),cl]
+      #look up if source node and target node already in links
+      current_link_combos <- paste(links$source, links$target)#get current combos
+      # print(current_link_combos)
+      if (paste(source_node_num, target_node_num) %in% current_link_combos){
+        node_count <- links[links$source==source_node_num & links$target==target_node_num, "count"]
+        print(paste("final if:", source_node_num, target_node_num, node_count))
+        links[links$source==source_node_num & links$target==target_node_num, "count"] <- node_count + 1
+      }#if (in link_combos) close
+      else{
+        new_row <- data.frame("source" = source_node_num,"target" = target_node_num,"count" = 1)
+        links <- rbind(links, new_row)
+      }#else close
+    }#if (query_cell %in% right_node_names close
+  }#column for-loop close
+  # if (target_group == "None"){
+  #   #if the primary source wasn't used, we increment the "None" count
+  #   none_index <- match("None", all_node_names)
+  #   current_link_combos <- paste(links$source, links$target)#get current combos
+  #   if (paste(source_node_num, none_index) %in% current_link_combos){
+  #       node_count <- links[links$source==source_node_num & links$target==none_index, "count"]
+  #       # print(paste("'Used' if:", source_node_num, target_node_num, node_count))
+  #       links[links$source==source_node_num & links$target==none_index, "count"] <- node_count + 1
+  #     }#if (in link_combos) close
+  #     else{
+  #       new_row <- data.frame("source" = source_node_num,"target" = none_index,"count" = 1)
+  #       links <- rbind(links, new_row)
+  #     }#else close
+  # }#if (used == FALSE
+}#row for loop close
+
+#make node names into dataframe for Sankey input
+nodes <- data.frame(nodes = all_node_names, groups=node_groups)
+#Adjust links because JS is 0 indexed
+links$source <- links$source - 1
+links$target <- links$target - 1
+
+print(links)
+```
+
+
+#New Sankey network:
+```{r}
+
+p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
+             Target = "target", Value = "count", NodeID = "groups",
+             fontSize = 10, nodeWidth = 40,
+             sinksRight = TRUE, nodePadding = 3, colourScale = "d3.scaleOrdinal(d3.schemeCategory10)")
+             #margin = list(50,100,500,100))
+             #, height = 500, width = 500)
+
+saveNetwork(p, file="output/no_none_study_Usage_Sankey.html", selfcontained = TRUE)
+
+# render with js
+sankey_rendered <- htmlwidgets::onRender(p,
+  'function(el, x) {
+    d3.selectAll(".node text")
+        .style("fill", "blue");
+  }'
 )
 
-```
-
-I also want to add a label:
-https://www.geeksforgeeks.org/how-to-add-axis-labels-using-networkd3-in-r/
-
-```{r}
-
-
-p <- htmlwidgets::prependContent(p,
-                                 htmltools::tags$h1(
-                                 "Sweetness Primary Study Usage",
-                                 style="text-align:center;color:#000000; "),
-                                      htmltools::tags$h2(
-                                        "Sankey plot",
-                                      style="color:#000000;text-align:center;"))
- 
-# view graph
-htmlwidgets::saveWidget(
-  p,
-  "output/updated_Sankey.html",
-  selfcontained = TRUE
-)
-p
+sankey_rendered
+saveNetwork(sankey_rendered, file="output/no_none_blue_study_Usage_Sankey.html",selfcontained = TRUE)
 
 ```
+#Simple network plot
+
+
 
 
 
 ```{r}
+p <- networkD3::simpleNetwork(links)
 
-# create left-right label
-leftTx = htmltools::tags$div(
-         style="max-width: 30vw; height: 100%;
-                 display: flex; align-items: center;
-                 justify-content: center;",
-         tags$p(""))
- 
-rightTx = htmltools::tags$p("",
-                   style="max-width:30vw")
- 
-# final output with label. combineWidget
-# can be use by manipulateWidget.
-p <- combineWidgets(p,
-                    title = tags$h1("With left-right label",
-                    style="text-align:center;color:#007500;"),
-                    leftCol = leftTx,
-                    rightCol = rightTx,
-                    nrow = 1)
- 
-# view graph
 p
+```
 
+```{r}
+p <- networkD3::forceNetwork(Links = links, Nodes = nodes, Source = "source",
+             Target = "target", Value = "count", NodeID = "nodes", Group = "groups",
+             fontSize = 9)
+
+p
 ```
 
 
 
 
-# create left-right label
-leftTx = tags$div(
-         style="max-width: 30vw; height: 100%;
-                 display: flex; align-items: center;
-                 justify-content: center;",
-         tags$p("This is left side label"))
- 
-rightTx = tags$p("This is right side label",
-                   style="max-width:30vw")
- 
-# final output with label. combineWidget
-# can be use by manipulateWidget.
-graph3 <- combineWidgets(graph2,
-                      title = tags$h1("With left-right label",
-                      style="text-align:center;color:#007500;"),
-                      leftCol = leftTx,
-                      rightCol = rightTx,
-                      nrow = 1)
- 
-# view graph
-graph3
 
 https://stackoverflow.com/questions/35056733/how-to-capture-html-output-as-png-in-r
 
-
+http://palomnyk.github.io/Sankey/output/Study_Usage_Sankey.html
 
 
