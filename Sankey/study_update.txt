@@ -121,7 +121,7 @@ Reference Short	Study Design	"McGlynn, 2022"	"Lee, 2022"	"Rousham, 2022"	"WHO, 2
 "Striegel-Moore, 2006"	Cohort	0	0	Text only	MA-BMI (continuous)	0	0	0	0	0	0	MA-BMI	0	0	0	0	MA-BMI	0	Text only	0	Text only
 "Newby, 2004"	Cohort	0	0	Text only	"MA-BW, BMI"	0	0	0	0	0	0	MA-BMI	0	0	0	MA-BMI	0	"MA-BW, BMI"	0	0	0
 "Kral, 2008"	Cohort	0	0	0	Text only	0	0	0	0	0	0	Text only	0	0	0	0	0	0	0	0	Text only
-"Blum, 2005"	Cohort		0	Text only	MA-BMI z-score (cont)	0	0	0	0	0	0	MA-BMI	0	0	0	Text only	0	0	Text only	0	Text only
+"Blum, 2005"	Cohort	0	0	Text only	MA-BMI z-score (cont)	0	0	0	0	0	0	MA-BMI	0	0	0	Text only	0	0	Text only	0	Text only
 "Ludwig, 2001"	Cohort	0	0	0	MA-OW incidence	0	0	0	0	0	0	MA-BMI	0	0	0	Text only	Text only	0	Text only	0	Text only
 "Zheng, 2019"	Cohort	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 "Davis, 2018"	Cohort	0	0	0	Text only	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0

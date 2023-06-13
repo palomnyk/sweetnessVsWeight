@@ -15,13 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
-
-```{r}
-study_usage <- read.table("study_update.txt", sep="\t", header = T,
-                          encoding = "latin1")
-head(study_usage)
-```
-
+#See which libary we can load
 ```{r}
 # if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 # if (!requireNamespace("ggsankey", quietly = TRUE))  install.packages("ggsankey")
@@ -45,6 +39,11 @@ sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
              units = "TWh", fontSize = 12, nodeWidth = 30)
 ```
 
+```{r}
+study_usage <- read.table("study_update.txt", sep="\t", header = T,
+                          encoding = "latin1")
+head(study_usage)
+```
 #Plan:
 Need to programatically tease out node names c("RCT",Cross-sectional","Cohort", "MA", "T").
 Need to find programatically linkages.
@@ -70,49 +69,50 @@ For row in study_usage, if study_usage$Study.Design is present:
         links[source == source_node_number & target == "None", counts] <- 1
 
 ```{r}
+rows_use <- nrow(study_usage)-1#because the last line is different data
 left_node_names <- unique(study_usage$Study.Design)
-right_node_names <- c("T","MA","None")
+right_node_names <- c(colnames(study_usage)[3:ncol(study_usage)])
 all_node_names <- c(left_node_names, right_node_names)
 
 links <- data.frame(source = character(0), target = character(0), count = integer(0))
-for (rw in 1:nrow(study_usage)){
+for (rw in 1:rows_use){
   primary <- study_usage$Study.Design[rw]#source
   if (primary %in% left_node_names){
     used <- FALSE #flag for determining secondary usage
     source_node_num <- match(primary, all_node_names)
     # print(primary)
-    for (cl in 10:19){
+    for (cl in 3:ncol(study_usage)){
       query_cell <- study_usage[rw,cl]
-      if (query_cell %in% right_node_names){
+      if (query_cell != "0"){
         used <- TRUE
-        target_node_num <- match(query_cell, all_node_names)
+        target_node_num <- match(colnames(study_usage)[cl], all_node_names)#match returns index
         #look up if source node and target node already in links
         current_link_combos <- paste(links$source, links$target)#get current combos
         if (paste(source_node_num, target_node_num) %in% current_link_combos){
           node_count <- links[links$source==source_node_num & links$target==target_node_num, "count"]
-          # print(paste("final if:", source_node_num, target_node_num, node_count))
+          print(paste("final if:", source_node_num, target_node_num, node_count))
           links[links$source==source_node_num & links$target==target_node_num, "count"] <- node_count + 1
         }#if (in link_combos) close
-        else{
+        else{#add the node links if they aren't already in the df
           new_row <- data.frame("source" = source_node_num,"target" = target_node_num,"count" = 1)
           links <- rbind(links, new_row)
         }#else close
       }#if (query_cell %in% right_node_names close
     }#column for-loop close
-    if (used == FALSE){
-      #if the primary source wasn't used, we increment the "None" count
-      none_index <- match("None", all_node_names)
-      current_link_combos <- paste(links$source, links$target)#get current combos
-      if (paste(source_node_num, none_index) %in% current_link_combos){
-          node_count <- links[links$source==source_node_num & links$target==none_index, "count"]
-          # print(paste("'Used' if:", source_node_num, target_node_num, node_count))
-          links[links$source==source_node_num & links$target==none_index, "count"] <- node_count + 1
-        }#if (in link_combos) close
-        else{
-          new_row <- data.frame("source" = source_node_num,"target" = none_index,"count" = 1)
-          links <- rbind(links, new_row)
-        }#else close
-    }#if (used == FALSE
+    # if (used == FALSE){
+    #   #if the primary source wasn't used, we increment the "None" count
+    #   none_index <- match("None", all_node_names)
+    #   current_link_combos <- paste(links$source, links$target)#get current combos
+    #   if (paste(source_node_num, none_index) %in% current_link_combos){
+    #       node_count <- links[links$source==source_node_num & links$target==none_index, "count"]
+    #       # print(paste("'Used' if:", source_node_num, target_node_num, node_count))
+    #       links[links$source==source_node_num & links$target==none_index, "count"] <- node_count + 1
+    #     }#if (in link_combos) close
+    #     else{
+    #       new_row <- data.frame("source" = source_node_num,"target" = none_index,"count" = 1)
+    #       links <- rbind(links, new_row)
+    #     }#else close
+    # }#if (used == FALSE
   }#if (primary) close
 }#row for loop close
 
@@ -136,7 +136,7 @@ p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
              margin = list(50,100,500,100), sinksRight = TRUE,
              height = 500, width = 500)
 
-saveNetwork(p, file="output/Study_Usage_Sankey_small.html", selfcontained = TRUE)
+saveNetwork(p, file="output/Study_Usage_Sankey_small_refs.html", selfcontained = TRUE)
 p
 
 ```
