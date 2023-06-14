@@ -1,0 +1,23 @@
+Order	Covidence	Study ID	Year	Duplicate Year	OBS Only	INT Only	OBS and INT	Decrease BW/more beneficial	Neutral (no directional effect or association)	Evidence is insufficient to draw a conclusion	Increase BW/less beneficial	"Other: Beneficial for LCS versus sugar; no clear evidence of
+effects on BW or EI of LCS compared with the consumption
+of water/nothing"	BEN - OBS	NEUTRAL - OBS	INSUFFICIENT - OBS	ADV - OBS	OTHER - OBS	NEUTRA/INSUF - OBS	BEN - INT	NEUTRAL - INT	INSUFFICIENT - INT	ADV - INT	OTHER - INT	NEUTRA/INSUF - INT	BEN - BOTH	NEUTRAL - BOTH	INSUFFICIENT - BOTH	ADV - BOTH	OTHER - BOTH	NEUTRA/INSUF - BOTH
+1	700	Brown 2010	2010	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+2	671	Wiebe 2011	2011	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0
+3	561	Miller 2014	2014	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+4	1394	Pereira 2014	2014	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+5	489	Reid 2016	2016	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+6	488	Rogers 2016	2016	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+7	400	Azad 2017	2017	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+8	395	Ruanpeng 2017	2017	1	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0
+9	352	Karalexi 2018	2018	0	1	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+10	341	Santos 2018	2018	1	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0
+11	283	Anker 2019	2019	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+12	329	Toews 2019	2019	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
+13	231	Laviada-Molina 2020	2020	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+14	240	Lohner 2020	2020	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0
+15	227	Qin 2020	2020	1	1	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+16	167	Rogers 2021	2021	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0
+17	25	Lee 2022	2022	0	1	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+18	84	McGlynn 2022	2022	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+19	7	Rousham 2022	2022	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1
+20	1440	WorldHealth 2022	2022	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1
