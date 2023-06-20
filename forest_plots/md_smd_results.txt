@@ -1,0 +1,81 @@
+Covidence ID	Reference	Figure/Table Number	Number of Studies	Population - Clean	Number of Participants	Intervention/Exposure	Intervention/Exposure - Clean	LCSB Only	Comparator - Clean 2	Outcome - Description	Outcome - Clean	Study Design	Study Design-Clean	MD	Lower 95% MD	Upper 95% MD	SMD	Lower 95% SMD	Upper 95% SMD	"Heterogeneity (I2, %)"	Stat sig?	Favors LCS or control
+1440	WorldHealth 2022	Table 2; Figure 5	5	Adults	80583	Highest NNS	Highest LCS	0	Lowest LCS	BMI	BMI	Cohort	Cohort	0.14	0.03	0.25	-	-	-	79	Yes	Control
+488	Rogers 2016	Figure 2	6	Adults	131463	LCS	LCS	0	all comparators	BMI	BMI	cohort	Cohort	0	-0.01	0	-	-	-	88.9	No	NS
+488	Rogers 2016	Figure 2	9	"Adults, adolescents, children"	-	LCS	LCS	0	all comparators	BMI	BMI	cohort	Cohort	0	-0.01	0	-	-	-	82.1	No	NS
+561	Miller 2014	Figure 4A	4	"Adults, adolescents, children"	0	LCS	LCS	0	all comparators	BMI	BMI	Prospective cohort	Cohort	0.03	0.01	0.06	-	-	-	53	Yes	Control
+561	Miller 2014	Figure 2D	7	"Adults, adolescents, children"	0	only LCS beverages	LCSB only	1	all comparators	BW	BW	RCT	RCT	-0.73	-1.11	-0.34	-	-	-	56	Yes	LCS
+1440	WorldHealth 2022	Figure A9.19	13	Adults	1289	LCSB	LCSB	1	no LCS	BMI	BMI	RCT	RCT	0.03	-0.2	0.25	-	-	-	72	No	NS
+84	McGlynn 2022	Figure 4	"3,14"	Adults	"174, 826"	LCSB	LCSB	1	Water/nothing/placebo	BMI	BMI	"RCT, network analysis"	RCT	0.02	-0.46	0.51	0.03	-0.5	0.55	-	No	NS
+400	Azad 2017	"Table 3, Figure 2B"	2	Adults and adolescents	21256	"NNS, continuous correlation"	LCS (continuous)	0	lower LCS	BMI	BMI	Cohort	Cohort	-	-	-	0.05	0.03	0.06	0	Yes	Control
+1440	WorldHealth 2022	Table 2; Figure 4	23	Adults	1857	NSS	LCS	0	all comparators	BMI	BMI	RCT	RCT	-0.14	-0.3	0.02	-	-	-	71	No	NS
+561	Miller 2014	Figure 3A	5	"Adults, adolescents, children"	0	LCS	LCS	0	all comparators	BMI	BMI	RCT	RCT	-0.24	-0.41	-0.07	-	-	-	0	Yes	LCS
+561	Miller 2014	Supplemental Table 1	4	Adults	-	LCS	LCS	0	all comparators	BMI	BMI	RCT	RCT	-0.22	-0.42	-0.02	-	-	-	-	Yes	LCS
+329	Toews 2019	Supplemental Figure 1	2	Adults	174	NSS	LCS	0	Sucrose/sugar	BMI	BMI	"RCT, random effects MA"	RCT	-0.6	-1.19	-0.01	-	-	-	96.9	Yes	LCS
+329	Toews 2019	Supplemental Figure 1	2	Adults	174	NSS	LCS	0	Sucrose/sugar	BMI	BMI	"RCT, fixed effects MA"	RCT	-0.69	-0.79	-0.59	-	-	-	96.9	Yes	LCS
+400	Azad 2017	"Table 3, Figure 2A"	3	Adults and adolescents	242	NNS	LCS	0	all comparators	BMI	BMI	RCT	RCT	-0.37	-1.1	0.36	-	-	-	9	No	NS
+167	Rogers 2021	Table 1	11	"Adults, adolescents, children"	1348	LCS	LCS	0	Sucrose/sugar	"BMI, end"	BMI	"RCT, parallel group"	RCT	-	-	-	-0.27	0	0.1	0	No	NS
+167	Rogers 2021	Supplemental Table 2c	6	"Adults, adolescents, children"	836	LCS	LCS	0	Sucrose/sugar	"BMI, end"	BMI	"RCT, parallel"	RCT	-	-	-	-0.13	-0.27	0.01	0	No	NS
+167	Rogers 2021	Table 1	8	"Adults, adolescents, children"	431	LCS	LCS	0	Water/nothing/placebo	"BMI, end"	BMI	"RCT, parallel group"	RCT	-	-	-	0.23	-0.4	0.87	0	No	NS
+84	McGlynn 2022	Figure 2	"9,14 (direct and network estiamte, respectively)"	Adults	"437, 836 (direct and network estiamte, respectively)"	LCSB	LCSB	1	Sucrose/sugar	BMI	BMI	"RCT, network analysis"	RCT	-0.32	-0.58	-0.07	-0.67	-1.19	-0.14	35	Yes	LCSB
+561	Miller 2014	Supplemental Table 2	3	"Adults, adolescents, children"	-	LCS	LCS	0	all comparators	Body fat (kg)	Body fat (kg)	Prospective cohort	Cohort	0.035	-0.026	0.096	-	-	-	-	No	NS
+1440	WorldHealth 2022	Table 2; Figure A9.7	5	Adults	11874	Highest NNS	Highest LCS	0	Lowest LCS	BW	BW	Cohort	Cohort	-0.01	-0.67	0.64	-	-	-	49	No	NS
+25	Lee 2022	Figure 3	3	Adults	165579	LNCSB	LCSB	1	Sucrose/sugar	BW (kg/y)	BW	"Cohort, substitution analysis"	Cohort	-0.12	-0.14	-0.1	-0.03	-0.05	-0.004	0	Yes	LCS
+561	Miller 2014	Supplemental Table 2	2	"Adults, adolescents, children"	-	LCS beverages only	LCSB only	1	all comparators	BW	BW	Prospective cohorts	Cohort	-0.001	-0.009	0.008	-	-	-	-	No	NS
+400	Azad 2017	"Table 3, Figure 2D"	4	Adults and adolescents	32405	"NNS, continuous correlation"	LCS (continuous)	0	lower LCS	BW	BW	Cohort	Cohort	-	-	-	0.06	0.05	0.07	46	Yes	Control
+561	Miller 2014	Figure 4B	4	"Adults, adolescents, children"	0	LCS	LCS	0	all comparators	BW	BW	Prospective cohorts	Cohort	0.02	-0.01	0.06	-	-	-	92	No	NS
+167	Rogers 2021	Table 1	11	"Adults, adolescents, children"	1348	LCS	LCS	0	Sucrose/sugar	"BMI, change"	BMI	"RCT, parallel group"	RCT	-	-	-	-0.35	-0.58	-0.12	70	Yes	LCS
+1440	WorldHealth 2022	Table 2; Figure A9.4	10	Adults	757	NNS	LCS	0	all comparators	Body fat (%)	Body fat (%)	RCT	RCT	-0.11	-0.78	0.56	-	-	-	74	No	NS
+1440	WorldHealth 2022	Table 2; Figure A9.3	6	Adults	618	NNS	LCS	0	all comparators	Body fat (kg)	Body fat (kg)	RCT	RCT	-0.54	-1.56	0.49	-	-	-	87	No	NS
+167	Rogers 2021	Supplemental Table 2c	6	"Adults, adolescents, children"	836	LCS	LCS	0	Sucrose/sugar	"BMI, change"	BMI	"RCT, parallel"	RCT	-	-	-	-0.62	-0.95	-0.28	52	Yes	LCS
+84	McGlynn 2022	Figure 2	"7,14 (direct and network estimate, respectively)"	Adults	"210, 559"	LCSB	LCSB	1	Sucrose/sugar	Body fat (%)	Body fat (%)	"RCT, network analysis"	RCT	-0.6	-1.03	-0.18	-0.74	-1.27	-0.22	0	Yes	LCSB
+84	McGlynn 2022	Figure 2	"12,24 (direct and network estimate, respectively)"	Adults	"467,1444 (direct and network estimate, respectively)"	LCSB	LCSB	1	Sucrose/sugar	BW	BW	"RCT, network analysis"	RCT	-1.06	-1.71	-0.41	-0.65	-1.05	-0.25	0	Yes	LCSB
+488	Rogers 2016	Figure 4	8	Adults	691	LCSB	LCSB	1	Sucrose/sugar	BW	BW	RCT	RCT	-1.41	-2.62	-0.2	-	-	-	90.5	Yes	LCS
+1440	WorldHealth 2022	Table 2; Figure A9.6	4	Adults	118457	"NNS (continuous, per serving)"	"LCS (continuous, per serving)"	0	Lower LCS	BW	BW	Cohort	Cohort	-0.12	-0.4	0.15	-	-	-	76	No	NS
+167	Rogers 2021	Table 1	8	"Adults, adolescents, children"	431	LCS	LCS	0	Water/nothing/placebo	"BMI, change"	BMI	"RCT, parallel group"	RCT	-	-	-	0.2	-0.1	0.51	64	No	NS
+84	McGlynn 2022	Figure 4	"4,14"	Adults	"124, 559"	LCSB	LCSB	1	Water/nothing/placebo	Body fat (%)	Body fat (%)	"RCT, network analysis"	RCT	-0.34	-1.67	1	-0.13	-0.66	0.39	0	No	NS
+1440	WorldHealth 2022	Table 2; Figure 3	29	Adults	2433	NNS	LCS	0	all comparators	BW	BW	RCT	RCT	-0.71	-1.13	-0.28	-	-	-	83	Yes	LCS
+25	Lee 2022	Figure 2	5	Adults	130020	increasing intake of LNCSB by one serving (330 mL) per day	Higher LCSB; dose-response (per 330 mL/d increase)	1	Lower LCS	BW (kg/y)	BW	"Cohort, change analysis"	Cohort	-0.008	-0.014	-0.002	-0.01	-0.02	-0.004	66	Yes	LCS
+561	Miller 2014	Figure 2A	13	"Adults, adolescents, children"	-	LCS	LCS	0	all comparators	BW	BW	RCT	RCT	-0.8	-1.17	-0.43	-	-	-	61	Yes	LCS
+561	Miller 2014	Figure 2B	10	Adults	0	LCS	LCS	0	all comparators	BW	BW	RCT	RCT	-0.72	-1.15	-0.3	-	-	-	64	Yes	LCS
+1440	WorldHealth 2022	Table 2; Figure A9.9	4	Adults	10895	Highest NNS	Highest LCS	0	Lowest LCS	HR/RR Ab OB	HR/RR Ab OB	Cohort	Cohort	1.33	0.91	1.96	-	-	-	91	No	NS
+1440	WorldHealth 2022	Table 2; Figure 6	2	Adults	1668	Highest NNS	Highest LCS	0	Lowest LCS	HR/RR OB	HR/RR OB	COhort	Cohort	1.76	1.25	2.49	-	-	-	0	Yes	Control
+400	Azad 2017	"Table 3, Figure 2C"	5	Adults and adolescents	791	NNS	LCS	0	all comparators	BW	BW	RCT	RCT	-	-	-	-0.17	-0.54	0.21	81	No	NS
+227	Qin 2020	Table 1	2	Adults	0	higher intake ASB; dose-response (per 250-mL/d increase)	Higher LCSB; dose-response (per 250 mL/d increase)	1	Lower LCS	HR/RR Ab OB	HR/RR Ab OB	Prospective cohort	Cohort	1.47	1.15	1.88	-	-	-	20.4	Yes	Control
+1440	WorldHealth 2022	Fig A9.16	18	Adults	1861	LCSB	LCSB	1	no LCS	BW	BW	RCT	RCT	-0.45	-1.03	0.12	-	-	-	86	No	NS
+1440	WorldHealth 2022	Fig A9.11	9	Adults	467	NNS	LCS	0	No LCS	BW	BW	"RCT, <= 1 mo"	RCT	-0.6	-0.88	-0.33	-	-	-	0	Yes	LCS
+1440	WorldHealth 2022	Fig A9.11	14	Adults	991	NNS	LCS	0	No LCS	BW	BW	"RCT, 2-3 mo"	RCT	-0.56	-1.08	-0.05	-	-	-	81	Yes	LCS
+1440	WorldHealth 2022	Fig A9.11	6	Adults	975	NNS	LCS	0	No LCS	BW	BW	"RCT, >=3 mo"	RCT	-1.32	-3.4	0.75	-	-	-	94	No	NS
+488	Rogers 2016	Figure 4	9	"Adults, adolescents, children"	-	LCSB	LCSB	1	Sucrose/sugar	BW	BW	RCT	RCT	-1.35	-2.28	-0.42	-	-	-	89.2	Yes	LCS
+1440	WorldHealth 2022	Figure A9.22	3	Adults	233	NNS	LCS	0	No LCS	BW	BW	Non-randomized CT	CT	-0.48	-0.64	-0.32	-	-	-	44	Yes	LCS
+329	Toews 2019	Figure 3	5	Adults	229	NNS	LCS	0	Sucrose/sugar	BW	BW	RCT	RCT	-1.29	-2.8	0.21	-	-	-	99	No	NS
+167	Rogers 2021	Table 1	26	"Adults, adolescents, children"	2196	LCS	LCS	0	Sucrose/sugar	"BW, end"	BW	"RCT, parallel group"	RCT	-	-	-	-1.45	-2.5	-0.41	0	Yes	LCS
+167	Rogers 2021	Table 1	8	"Adults, adolescents, children"	123	LCS	LCS	0	Sucrose/sugar	"BW, end"	BW	"RCT, cross over"	RCT	-	-	-	-0.55	-5.34	4.25	0	No	NS
+167	Rogers 2021	Supplemental Table 2c	12	"Adults, adolescents, children"	1168	LCS	LCS	0	Sucrose/sugar	"BW, end"	BW	"RCT, parallel"	RCT	-	-	-	-0.15	-0.27	-0.04	0	Yes	LCS
+488	Rogers 2016	Figure 4	3	"Adults, adolescents, children"	541	LCS	LCS	0	Water/nothing/placebo	BW	BW	RCT	RCT	-1.24	-2.22	-0.26	-	-	-	38.4	Yes	LCS
+167	Rogers 2021	Table 1	10	"Adults, adolescents, children"	1040	LCS	LCS	0	Water/nothing/placebo	"BW, end"	BW	"RCT, parallel group"	RCT	-	-	-	-0.01	-1.55	1.53	3	No	NS
+167	Rogers 2021	Table 1	4	"Adults, adolescents, children"	134	LCS	LCS	0	Water/nothing/placebo	"BW, end"	BW	"RCT, cross over"	RCT	-	-	-	-0.45	-0.91	0	0	Yes	LCS
+561	Miller 2014	Figure 3B	5	"Adults, adolescents, children"	0	LCS	LCS	0	all comparators	Body fat (kg)	Body fat (kg)	RCT	RCT	-1.1	-1.77	-0.44	-	-	-	86	Yes	LCS
+561	Miller 2014	Supplemental Table 1	4	Adults	-	LCS	LCS	0	all comparators	Body fat (kg)	Body fat (kg)	RCT	RCT	-1.13	-2.17	-0.09	-	-	-	-	Yes	LCS
+231	Laviada-Molina 2020	Figure 7	16	Adults	1820	NNS	LCS	0	all comparators	BW or BMI	BW or BMI	RCT	RCT	-	-	-	-0.43	-0.64	-0.22	71	Yes	LCS
+167	Rogers 2021	Table 1	4	"Adults, adolescents, children"	134	LCS	LCS	0	Water/nothing/placebo	"BW, end"	BW	"RCT, cross over"	RCT	-	-	-	-0.05	-0.5	0.39	0	No	NS
+167	Rogers 2021	Table 1	11	"Adults, adolescents, children"	1068	LCS	LCS	0	Water/nothing/placebo	"BW, change"	BW	"RCT, parallel group"	RCT	-	-	-	0.1	-0.87	1.07	82	No	NS
+167	Rogers 2021	Supplemental Table 2c	6	"Adults, adolescents, children"	94	LCS	LCS	0	Sucrose/sugar	"BW, end"	BW	"RCT, Cross-over"	RCT	-	-	-	-0.04	-0.55	0.47	0	No	NS
+84	McGlynn 2022	Figure 4	"9,24"	Adults	"752, 1444"	LCSB	LCSB	1	Water/nothing/placebo	BW	BW	"RCT, network analysis"	RCT	-1.07	-1.95	-0.19	-0.48	-0.88	-0.08	71	Yes	LCSB
+167	Rogers 2021	Table 1	29	"Adults, adolescents, children"	2267	LCS	LCS	0	Sucrose/sugar	"BW, change"	BW	"RCT, parallel group"	RCT	-	-	-	-1.06	-1.5	-0.62	51	Yes	LCS
+167	Rogers 2021	Table 1	8	"Adults, adolescents, children"	123	LCS	LCS	0	Sucrose/sugar	"BW, change"	BW	"RCT, cross over"	RCT	-	-	-	-0.53	-1.01	-0.05	0	Yes	LCS
+167	Rogers 2021	Supplemental Table 2c	12	"Adults, adolescents, children"	1168	LCS	LCS	0	Sucrose/sugar	"BW, change (mean SD)"	BW	"RCT, parallel"	RCT	-	-	-	-0.37	-0.6	-0.14	51	Yes	LCS
+231	Laviada-Molina 2020	Figure 3	20	"Adults, adolescents, children"	2914	LCS	LCS	0	No LCS	BW or BMI	BW or BMI	RCT	RCT	-	-	-	-0.4	-0.57	-0.22	69	Yes	LCS
+167	Rogers 2021	Supplemental Table 2c	6	"Adults, adolescents, children"	94	LCS	LCS	0	Sucrose/sugar	"BW, change (mean SD)"	BW	"RCT, Cross-over"	RCT	-	-	-	-0.34	-0.86	0.18	0	No	NS
+167	Rogers 2021	Supplemental Table 2c	12	"Adults, adolescents, children"	1168	LCS	LCS	0	Sucrose/sugar	"BW, change (RM SD)"	BW	"RCT, parallel"	RCT	-	-	-	-0.37	-0.6	-0.14	51	Yes	LCS
+231	Laviada-Molina 2020	Figure 4	13	"Adults, adolescents, children"	1997	NNS	LCS	0	Sucrose/sugar	BW or BMI	BW or BMI	RCT	RCT	-	-	-	-0.56	-0.79	-0.34	72	Yes	LCS
+84	McGlynn 2022	Figure 2	"0,6"	Adults	"0,868"	LCSB	LCSB	1	Sucrose/sugar	WC	WC	"RCT, network analysis"	RCT	-0.52	-4.98	3.94	-0.09	-0.89	0.71	-	No	NS
+231	Laviada-Molina 2020	Figure 4	5	"Adults, adolescents, children"	363	NNS	LCS	0	Water/nothing/placebo	BW or BMI	BW or BMI	RCT	RCT	-	-	-	-0.06	-0.27	0.15	0	No	NS
+231	Laviada-Molina 2020	Figure 4	4	"Adults, adolescents, children"	554	NNS	LCS	0	Water/nothing/placebo	BW or BMI	BW or BMI	RCT	RCT	-	-	-	-0.2	-0.62	-0.23	81	No	NS
+84	McGlynn 2022	Figure 4	"5,6"	Adults	"628, 868"	LCSB	LCSB	1	Water/nothing/placebo	WC	WC	"RCT, network analysis"	RCT	-0.82	-2.83	1.19	-0.33	-1.13	0.47	70	No	NS
+1440	WorldHealth 2022	Table 2; Figure A9.1	10	Adults	1252	NNS	LCS	0	all comparators	WC	WC	RCT	RCT	-0.24	0	0.58	-	-	-	74	No	NS
+561	Miller 2014	Figure 3C	3	"Adults, adolescents, children"	0	LCS	LCS	0	all comparators	WC	WC	RCT	RCT	-0.83	-1.29	-0.37	-	-	-	0	Yes	LCS
+561	Miller 2014	Supplemental Table 1	2	Adults	-	LCS	LCS	0	all comparators	WC	WC	RCT	RCT	-1.29	-2.23	-0.34	-	-	-	-	Yes	LCS
+400	Azad 2017	"Table 3, Figure S1A"	3	Adults and adolescents	683	NNS	LCS	0	all comparators	WC	WC	RCT	RCT	-	-	-	-0.16	-0.56	0.25	83	No	NS
+227	Qin 2020	Figure 2	5	Adults	22390	higher intake ASB; dose-response (per 250-mL/d increase)	Higher LCSB; dose-response (per 250 mL/d increase)	1	Lower LCS	HR/RR OB	HR/RR OB	Prospective cohort	Cohort	1.21	1.09	1.35	-	-	-	47.2	Yes	Control
+227	Qin 2020	Supplemental Figure 1	5	Adults	-	highest intake ASB (high v low)	Highest LCSB (h v l)	1	Lowest LCS	HR/RR OB	HR/RR OB	Prospective cohort	Cohort	1.39	0.96	2.01	-	-	-	89.2	No	NS
+1440	WorldHealth 2022	Table 2; Figure A9.8	3	Adults	12886	Highest NNS	Highest LCS	0	Lowest LCS	WC	WC	Cohort	Cohort	0.92	-1.73	3.56	-	-	-	85	No	NS
