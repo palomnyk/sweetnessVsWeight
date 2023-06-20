@@ -40,8 +40,10 @@ sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
 ```
 
 ```{r}
-study_usage <- read.table("study_update.txt", sep="\t", header = T,
-                          encoding = "latin1")
+study_usage <- read.table("study_update_KH_20Jun2023.txt", sep="\t", header = T,
+                          encoding = "latin1", check.names = FALSE)
+study_usage <- subset(study_usage, select = -`Reference Short`)
+colnames(study_usage)[colnames(study_usage) == "Reference Short 2"] <- "Reference Short"
 head(study_usage)
 ```
 #Plan:
@@ -50,38 +52,20 @@ Need to find programatically linkages.
   Source and target
 Need to make counts (values) for thickness of linkages.
 
-#Psudo-code to find linkages and counts
-links <- dataframe for links with headers as: source, target, count
-For row in study_usage, if study_usage$Study.Design is present:
-  used <- FALSE #flag for determining secondary usage
-  source_node_number <- index in all node names
-  for column in secondary columns:
-    if row in column has name in node_names:
-      used <- TRUE
-      target_node_number <- index in all node names
-      if source_node_number and target_node_number combo in linkds df:
-        links[source == source_node_number & target == target_node_number, counts] += 1
-      else:
-        links[source == source_node_number & target == target_node_number, counts] <- 1
-    if (used == FALSE):
-        links[source == source_node_number & target == "None", counts] += 1
-      else:
-        links[source == source_node_number & target == "None", counts] <- 1
-
 ```{r}
 rows_use <- nrow(study_usage)-1#because the last line is different data
-left_node_names <- unique(study_usage$Study.Design)
-right_node_names <- c(colnames(study_usage)[3:ncol(study_usage)])
+left_node_names <- unique(study_usage$`Study Design`[1:rows_use])
+right_node_names <- c(colnames(study_usage)[4:ncol(study_usage)])
 all_node_names <- c(left_node_names, right_node_names)
 
 links <- data.frame(source = character(0), target = character(0), count = integer(0))
 for (rw in 1:rows_use){
-  primary <- study_usage$Study.Design[rw]#source
+  primary <- study_usage$`Study Design`[rw]#source
   if (primary %in% left_node_names){
     used <- FALSE #flag for determining secondary usage
     source_node_num <- match(primary, all_node_names)
     # print(primary)
-    for (cl in 3:ncol(study_usage)){
+    for (cl in 4:ncol(study_usage)){
       query_cell <- study_usage[rw,cl]
       if (query_cell != "0"){
         used <- TRUE
@@ -90,7 +74,7 @@ for (rw in 1:rows_use){
         current_link_combos <- paste(links$source, links$target)#get current combos
         if (paste(source_node_num, target_node_num) %in% current_link_combos){
           node_count <- links[links$source==source_node_num & links$target==target_node_num, "count"]
-          print(paste("final if:", source_node_num, target_node_num, node_count))
+          # print(paste("final if:", source_node_num, target_node_num, node_count))
           links[links$source==source_node_num & links$target==target_node_num, "count"] <- node_count + 1
         }#if (in link_combos) close
         else{#add the node links if they aren't already in the df
@@ -117,8 +101,8 @@ for (rw in 1:rows_use){
 }#row for loop close
 
 #update node names to clarify in plot
-all_node_names[all_node_names == "MA"] <- "Meta-analysis"
-all_node_names[all_node_names == "T"] <- "Text/tabular summary"
+
+
 #make node names into dataframe for Sankey input
 nodes <- data.frame(nodes = all_node_names)
 #Adjust links because JS is 0 indexed
@@ -129,14 +113,13 @@ print(links)
 ```
 
 ```{r}
-
 p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
              Target = "target", Value = "count", NodeID = "nodes",
              units = "Studies", fontSize = 20, nodeWidth = 30, 
              margin = list(50,100,500,100), sinksRight = TRUE,
              height = 500, width = 500)
 
-saveNetwork(p, file="output/Study_Usage_Sankey_small_refs.html", selfcontained = TRUE)
+saveNetwork(p, file="output/Study_Usage_Sankey_small_refs_KH20Jun2023.html", selfcontained = TRUE)
 p
 
 ```
