@@ -127,15 +127,15 @@ p
 To improve the figure, Dr. Higgins has provided an updated and redesigned input and updated the request for the figure.
 
 ```{r}
-study_usage <- read.table("study_update.txt", sep="\t", header = T,
-                          encoding = "latin1")
+study_usage <- read.table("study_update_KH_20Jun2023.txt", sep="\t", header = T,
+                          encoding = "latin1", check.names = FALSE)
 head(study_usage)
 ```
 
 ```{r}
 rows_use <- nrow(study_usage)-1#because the last line is different data
-left_node_names <- unique(study_usage$Reference.Short[1:rows_use])
-right_node_names <- c(colnames(study_usage)[3:ncol(study_usage)])
+left_node_names <- unique(study_usage$`Reference Short 2`[1:rows_use])
+right_node_names <- c(colnames(study_usage)[5:ncol(study_usage)])
 all_node_names <- c(left_node_names, right_node_names)
 left_node_groups <- study_usage[nrow(study_usage),3:ncol(study_usage)]
 length(all_node_names)
@@ -147,15 +147,15 @@ links <- data.frame(source = character(0), target = character(0), count = intege
 node_groups <- c()
 # node_groups[length(all_node_names)] <- "None"
 for (rw in 1:rows_use){
-  primary <- study_usage$Reference.Short[rw]#source
+  primary <- study_usage$`Reference Short 2`[rw]#source
   source_node_num <- match(primary, all_node_names)
-  node_groups[source_node_num] <- study_usage$Study.Design[rw]
+  node_groups[source_node_num] <- study_usage$`Study Design`[rw]
   target_group <- "None"
-  print(paste(rw, primary, study_usage$Study.Design[rw]))
-  for (cl in 3:ncol(study_usage)){
+  print(paste(rw, primary, study_usage$`Study Design`[rw]))
+  for (cl in 5:ncol(study_usage)){
     query_cell <- study_usage[rw,cl]
     if (query_cell != "0"){
-      target_node_num <- match(colnames(study_usage)[cl], all_node_names)#match returns index
+      target_node_num <- match(colnames(study_usage)[cl], all_node_names)#match returns index of matching var
       node_groups[target_node_num] <- study_usage[nrow(study_usage),cl]
       #look up if source node and target node already in links
       current_link_combos <- paste(links$source, links$target)#get current combos
@@ -201,7 +201,7 @@ print(links)
 ```{r}
 
 p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
-             Target = "target", Value = "count", NodeID = "groups",
+             Target = "target", Value = "count", NodeID = "nodes",
              fontSize = 10, nodeWidth = 40,
              sinksRight = TRUE, nodePadding = 3, colourScale = "d3.scaleOrdinal(d3.schemeCategory10)")
              #margin = list(50,100,500,100))
