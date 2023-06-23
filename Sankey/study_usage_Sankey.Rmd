@@ -40,7 +40,7 @@ sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
 ```
 
 ```{r}
-study_usage <- read.table("study_update_KH_20Jun2023.txt", sep="\t", header = T,
+study_usage <- read.table("study_update_KH_62323.txt", sep="\t", header = T,
                           encoding = "latin1", check.names = FALSE)
 study_usage <- subset(study_usage, select = -`Reference Short`)
 colnames(study_usage)[colnames(study_usage) == "Reference Short 2"] <- "Reference Short"
@@ -126,15 +126,10 @@ p
 
 To improve the figure, Dr. Higgins has provided an updated and redesigned input and updated the request for the figure.
 
-```{r}
-study_usage <- read.table("study_update_KH_20Jun2023.txt", sep="\t", header = T,
-                          encoding = "latin1", check.names = FALSE)
-head(study_usage)
-```
 
 ```{r}
 rows_use <- nrow(study_usage)-1#because the last line is different data
-left_node_names <- unique(study_usage$`Reference Short 2`[1:rows_use])
+left_node_names <- unique(study_usage$`Reference Short`[1:rows_use])
 right_node_names <- c(colnames(study_usage)[5:ncol(study_usage)])
 all_node_names <- c(left_node_names, right_node_names)
 left_node_groups <- study_usage[nrow(study_usage),3:ncol(study_usage)]
@@ -147,7 +142,7 @@ links <- data.frame(source = character(0), target = character(0), count = intege
 node_groups <- c()
 # node_groups[length(all_node_names)] <- "None"
 for (rw in 1:rows_use){
-  primary <- study_usage$`Reference Short 2`[rw]#source
+  primary <- study_usage$`Reference Short`[rw]#source
   source_node_num <- match(primary, all_node_names)
   node_groups[source_node_num] <- study_usage$`Study Design`[rw]
   target_group <- "None"
