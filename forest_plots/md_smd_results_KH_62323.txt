@@ -61,12 +61,3 @@ WHO 2022 - LCS v All	0	1440	WHO 2022	Table 2; Figure A9.1	10	Adults	1252	NNS	LCS
 "WHO 2022 - LCS, cont"	1	1440	WHO 2022	Table 2; Figure A9.6	4	Adults	118457	"NNS (continuous, per serving)"	"LCS (continuous, per serving)"	0	Lower LCS	BW	BW	Cohort	Cohort	-0.12	-0.4	0.15	-	-	-	76	No	NS
 WHO 2022 - LCSB v None	1	1440	WHO 2022	Figure A9.19	13	Adults	1289	LCSB	LCSB	1	no LCS	BMI	BMI	RCT	RCT	0.03	-0.2	0.25	-	-	-	72	No	NS
 WHO 2022 - LCSB v None	1	1440	WHO 2022	Fig A9.16	18	Adults	1861	LCSB	LCSB	1	no LCS	BW	BW	RCT	RCT	-0.45	-1.03	0.12	-	-	-	86	No	NS
-																								
-																								
-																								
-																								
-																								
-																								
-																								
-																								
-																								
