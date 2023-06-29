@@ -129,29 +129,28 @@ To improve the figure, Dr. Higgins has provided an updated and redesigned input 
 
 ```{r}
 rows_use <- nrow(study_usage)-1#because the last line is different data
+ref_column_start <- 4
 left_node_names <- unique(study_usage$`Reference Short`[1:rows_use])
-right_node_names <- c(colnames(study_usage)[5:ncol(study_usage)])
+right_node_names <- c(colnames(study_usage)[ref_column_start:ncol(study_usage)])
 all_node_names <- c(left_node_names, right_node_names)
-left_node_groups <- study_usage[nrow(study_usage),3:ncol(study_usage)]
+left_node_groups <- study_usage$`Study Design`[1:rows_use]
+right_node_groups <- study_usage[nrow(study_usage),ref_column_start:ncol(study_usage)]
+all_groups <- c(unlist(left_node_groups), unlist(right_node_groups))
 length(all_node_names)
 ```
 
 #Updated code to include node groupings
 ```{r}
 links <- data.frame(source = character(0), target = character(0), count = integer(0))
-node_groups <- c()
 # node_groups[length(all_node_names)] <- "None"
 for (rw in 1:rows_use){
   primary <- study_usage$`Reference Short`[rw]#source
   source_node_num <- match(primary, all_node_names)
-  node_groups[source_node_num] <- study_usage$`Study Design`[rw]
-  target_group <- "None"
-  print(paste(rw, primary, study_usage$`Study Design`[rw]))
-  for (cl in 5:ncol(study_usage)){
+  # print(paste(rw, primary, study_usage$`Study Design`[rw]))
+  for (cl in ref_column_start:ncol(study_usage)){
     query_cell <- study_usage[rw,cl]
     if (query_cell != "0"){
       target_node_num <- match(colnames(study_usage)[cl], all_node_names)#match returns index of matching var
-      node_groups[target_node_num] <- study_usage[nrow(study_usage),cl]
       #look up if source node and target node already in links
       current_link_combos <- paste(links$source, links$target)#get current combos
       # print(current_link_combos)
@@ -183,22 +182,34 @@ for (rw in 1:rows_use){
 }#row for loop close
 
 #make node names into dataframe for Sankey input
-nodes <- data.frame(nodes = all_node_names, groups=node_groups)
+nodes <- data.frame(nodes = all_node_names, groups=all_groups)
 #Adjust links because JS is 0 indexed
 links$source <- links$source - 1
 links$target <- links$target - 1
 
-print(links)
+# print(links)
 ```
 
 
 #New Sankey network:
 ```{r}
 
+# Add a 'group' column to the nodes data frame:# Add a 'group' column to the nodes data frame:
+nodes$groups <- as.factor(nodes$groups)
+nodes$groups <- gsub(" ", "_", nodes$groups)
+
+links$groups <- lapply(links$source, function(x) {
+  return(nodes$groups[x+1])#the "+1" is because the javascript is 0-indexed
+  })
+ 
+# Give a color for each group:
+my_color <- 'd3.scaleOrdinal() .domain(["RCT", "Cross-sectional", "Cohort", "RCT_only", "Cohort_only", "RCT_and_Cohort"]) .range(["green", "grey", "red", "yellow", "orange", "blue"])'
+
 p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
              Target = "target", Value = "count", NodeID = "nodes",
-             fontSize = 10, nodeWidth = 40,
-             sinksRight = TRUE, nodePadding = 3, colourScale = "d3.scaleOrdinal(d3.schemeCategory10)")
+             fontSize = 10, nodeWidth = 40, NodeGroup = "groups",
+             sinksRight = TRUE, nodePadding = 3, colourScale=my_color,
+             LinkGroup="groups")
              #margin = list(50,100,500,100))
              #, height = 500, width = 500)
 
