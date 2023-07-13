@@ -6,22 +6,21 @@ date: "2023-06-02"
 
 Document for making Sankey Plot.
 
-On the left side of the plot, we need to have the primary sources
-On the right, we need to put how they are used in systematic reviews.
-
+On the left side of the plot, we need to have the primary sources On the right, we need to put how they are used in systematic reviews.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
+
 #See which libary we can load
+
 ```{r}
 # if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 # if (!requireNamespace("ggsankey", quietly = TRUE))  install.packages("ggsankey")
 # library("ggsankey")
 ```
-
 
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
@@ -46,11 +45,8 @@ study_usage <- subset(study_usage, select = -`Reference Short`)
 colnames(study_usage)[colnames(study_usage) == "Reference Short 2"] <- "Reference Short"
 head(study_usage)
 ```
-#Plan:
-Need to programatically tease out node names c("RCT",Cross-sectional","Cohort", "MA", "T").
-Need to find programatically linkages.
-  Source and target
-Need to make counts (values) for thickness of linkages.
+
+#Plan: Need to programatically tease out node names c("RCT",Cross-sectional","Cohort", "MA", "T"). Need to find programatically linkages. Source and target Need to make counts (values) for thickness of linkages.
 
 ```{r}
 rows_use <- nrow(study_usage)-1#because the last line is different data
@@ -126,7 +122,6 @@ p
 
 To improve the figure, Dr. Higgins has provided an updated and redesigned input and updated the request for the figure.
 
-
 ```{r}
 rows_use <- nrow(study_usage)-1#because the last line is different data
 ref_column_start <- 4
@@ -140,6 +135,7 @@ length(all_node_names)
 ```
 
 #Updated code to include node groupings
+
 ```{r}
 links <- data.frame(source = character(0), target = character(0), count = integer(0))
 # node_groups[length(all_node_names)] <- "None"
@@ -190,28 +186,33 @@ links$target <- links$target - 1
 # print(links)
 ```
 
-
 #New Sankey network:
+
 ```{r}
 
 # Add a 'group' column to the nodes data frame:# Add a 'group' column to the nodes data frame:
 nodes$groups <- as.factor(nodes$groups)
 nodes$groups <- gsub(" ", "_", nodes$groups)
+nodes$groups <- gsub("-", "_", nodes$groups)
+links$groups <- gsub("-", "_", links$groups)
 
-links$groups <- lapply(links$source, function(x) {
+links$groups <- unlist(lapply(links$source, function(x) {
   return(nodes$groups[x+1])#the "+1" is because the javascript is 0-indexed
-  })
+  }))
+# levels(links$groups) <- c("RCT","Cross_sectional","Cohort","RCT_only","Cohort_only","RCT_and_Cohort")
  
 # Give a color for each group:
-my_color <- 'd3.scaleOrdinal() .domain(["RCT", "Cross-sectional", "Cohort", "RCT_only", "Cohort_only", "RCT_and_Cohort"]) .range(["green", "grey", "red", "yellow", "orange", "blue"])'
+my_color <- 'd3.scaleOrdinal() .domain(["RCT", "Cross_sectional", "Cohort", "RCT_only", "Cohort_only", "RCT_and_Cohort"]) .range(["#6194C1", "grey", "#F38C3E", "#6194C1", "#F38C3E", " #AA9080"])'
+
+# Might be good to change the light blue to something like pink or purple (not blue, orange, red, yellow, or green since those colors have different meanings in different sections of the manuscript).
 
 p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
              Target = "target", Value = "count", NodeID = "nodes",
-             fontSize = 10, nodeWidth = 40, NodeGroup = "groups",
+             fontSize = 9, nodeWidth = 40, NodeGroup = "groups",
              sinksRight = TRUE, nodePadding = 3, colourScale=my_color,
-             LinkGroup="groups")
+             LinkGroup="groups",
              #margin = list(50,100,500,100))
-             #, height = 500, width = 500)
+             height = 600, width = 400)
 
 saveNetwork(p, file="output/no_none_study_Usage_Sankey.html", selfcontained = TRUE)
 
@@ -227,11 +228,8 @@ sankey_rendered
 saveNetwork(sankey_rendered, file="output/no_none_blue_study_Usage_Sankey.html",selfcontained = TRUE)
 
 ```
+
 #Simple network plot
-
-
-
-
 
 ```{r}
 p <- networkD3::simpleNetwork(links)
@@ -241,18 +239,12 @@ p
 
 ```{r}
 p <- networkD3::forceNetwork(Links = links, Nodes = nodes, Source = "source",
-             Target = "target", Value = "count", NodeID = "nodes", Group = "groups",
-             fontSize = 9)
+             Target = "target", Value = "count", NodeID = "nodes",Group = "groups",
+             fontSize = 10, colourScale=my_color)
 
 p
 ```
 
+<https://stackoverflow.com/questions/35056733/how-to-capture-html-output-as-png-in-r>
 
-
-
-
-https://stackoverflow.com/questions/35056733/how-to-capture-html-output-as-png-in-r
-
-http://palomnyk.github.io/Sankey/output/Study_Usage_Sankey.html
-
-
+<http://palomnyk.github.io/Sankey/output/Study_Usage_Sankey.html>

@@ -84,6 +84,10 @@ colnames(df)[colnames(df) == "Intervention/Exposure___Clean"] <- "Intervention"
 colnames(df)[colnames(df) == "Comparator___Clean_2"] <- "Comparator"
 colnames(df)[colnames(df) == "Reference_2"] <- "Reference"
 
+# Drop rows that we don't need
+
+df <- df[df$IncludeinPlot == 1, ]
+
 #set up variables to loop over
 yaxes <- c("MD","SMD")
 y_CIs <- list(c("Lower_95prcnt_MD", "Upper_95prcnt_MD"), c("Lower_95prcnt_SMD", "Upper_95prcnt_SMD"))

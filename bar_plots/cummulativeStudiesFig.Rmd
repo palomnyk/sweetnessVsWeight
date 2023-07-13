@@ -24,14 +24,6 @@ my_data <- tidyr::pivot_longer(data=my_data, cols=2:10, names_to = "result", val
 my_data <- aggregate(count ~ result + Year, data=my_data, FUN=sum, drop=F)
 my_data$Study.Design <- "Systematic Review"
 my_data$Study.level <- "Review"
-# make column for colors
-my_data$color <- lapply(my_data$result, function(x){
-  y = substr(x, 1,3)
-  if (y == "BEN") x = "green"
-  if (y == "NEU") x = "yellow"
-  if (y == "ADV") x = "red"
-  return(x)
-  })
 my_data$conclusion <- lapply(my_data$result, function(x){
   y = substr(x, 1,3)
   if (y == "BEN") x = "Beneficial"
