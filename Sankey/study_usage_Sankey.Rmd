@@ -38,7 +38,7 @@ sankeyNetwork(Links = Energy$links, Nodes = Energy$nodes, Source = "source",
              units = "TWh", fontSize = 12, nodeWidth = 30)
 ```
 
-```{r}
+```{r import data}
 study_usage <- read.table("study_update_KH_62323.txt", sep="\t", header = T,
                           encoding = "latin1", check.names = FALSE)
 study_usage <- subset(study_usage, select = -`Reference Short`)
@@ -48,7 +48,7 @@ head(study_usage)
 
 #Plan: Need to programatically tease out node names c("RCT",Cross-sectional","Cohort", "MA", "T"). Need to find programatically linkages. Source and target Need to make counts (values) for thickness of linkages.
 
-```{r}
+```{r reorganize data to fit networkd3}
 rows_use <- nrow(study_usage)-1#because the last line is different data
 left_node_names <- unique(study_usage$`Study Design`[1:rows_use])
 right_node_names <- c(colnames(study_usage)[4:ncol(study_usage)])
@@ -79,20 +79,6 @@ for (rw in 1:rows_use){
         }#else close
       }#if (query_cell %in% right_node_names close
     }#column for-loop close
-    # if (used == FALSE){
-    #   #if the primary source wasn't used, we increment the "None" count
-    #   none_index <- match("None", all_node_names)
-    #   current_link_combos <- paste(links$source, links$target)#get current combos
-    #   if (paste(source_node_num, none_index) %in% current_link_combos){
-    #       node_count <- links[links$source==source_node_num & links$target==none_index, "count"]
-    #       # print(paste("'Used' if:", source_node_num, target_node_num, node_count))
-    #       links[links$source==source_node_num & links$target==none_index, "count"] <- node_count + 1
-    #     }#if (in link_combos) close
-    #     else{
-    #       new_row <- data.frame("source" = source_node_num,"target" = none_index,"count" = 1)
-    #       links <- rbind(links, new_row)
-    #     }#else close
-    # }#if (used == FALSE
   }#if (primary) close
 }#row for loop close
 
@@ -108,7 +94,7 @@ links$target <- links$target - 1
 print(links)
 ```
 
-```{r}
+```{r basic sankey}
 p <- sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
              Target = "target", Value = "count", NodeID = "nodes",
              units = "Studies", fontSize = 20, nodeWidth = 30, 
@@ -136,7 +122,7 @@ length(all_node_names)
 
 #Updated code to include node groupings
 
-```{r}
+```{r include node groupings}
 links <- data.frame(source = character(0), target = character(0), count = integer(0))
 # node_groups[length(all_node_names)] <- "None"
 for (rw in 1:rows_use){
@@ -161,20 +147,6 @@ for (rw in 1:rows_use){
       }#else close
     }#if (query_cell %in% right_node_names close
   }#column for-loop close
-  # if (target_group == "None"){
-  #   #if the primary source wasn't used, we increment the "None" count
-  #   none_index <- match("None", all_node_names)
-  #   current_link_combos <- paste(links$source, links$target)#get current combos
-  #   if (paste(source_node_num, none_index) %in% current_link_combos){
-  #       node_count <- links[links$source==source_node_num & links$target==none_index, "count"]
-  #       # print(paste("'Used' if:", source_node_num, target_node_num, node_count))
-  #       links[links$source==source_node_num & links$target==none_index, "count"] <- node_count + 1
-  #     }#if (in link_combos) close
-  #     else{
-  #       new_row <- data.frame("source" = source_node_num,"target" = none_index,"count" = 1)
-  #       links <- rbind(links, new_row)
-  #     }#else close
-  # }#if (used == FALSE
 }#row for loop close
 
 #make node names into dataframe for Sankey input
@@ -188,13 +160,13 @@ links$target <- links$target - 1
 
 #New Sankey network:
 
-```{r}
+```{r reorganize and draw Sankey network}
 
 # Add a 'group' column to the nodes data frame:# Add a 'group' column to the nodes data frame:
 nodes$groups <- as.factor(nodes$groups)
 nodes$groups <- gsub(" ", "_", nodes$groups)
 nodes$groups <- gsub("-", "_", nodes$groups)
-links$groups <- gsub("-", "_", links$groups)
+# links$groups <- gsub("-", "_", links$groups)
 
 links$groups <- unlist(lapply(links$source, function(x) {
   return(nodes$groups[x+1])#the "+1" is because the javascript is 0-indexed
@@ -231,13 +203,13 @@ saveNetwork(sankey_rendered, file="output/no_none_blue_study_Usage_Sankey.html",
 
 #Simple network plot
 
-```{r}
+```{r experimentation network}
 p <- networkD3::simpleNetwork(links)
 
 p
 ```
 
-```{r}
+```{r forcenetwork experimentation}
 p <- networkD3::forceNetwork(Links = links, Nodes = nodes, Source = "source",
              Target = "target", Value = "count", NodeID = "nodes",Group = "groups",
              fontSize = 10, colourScale=my_color)
